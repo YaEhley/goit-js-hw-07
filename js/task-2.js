@@ -37,7 +37,17 @@ gallery.style.alignItems = 'center';
 gallery.style.gap = '48px 24px';
 
 const markup = images.map((image) => {
-  return `<li class="gallery-item" style="list-style-type: none; flex: calc(100%/3 - 48px);"><img class="gallery-img" src=${image.url} alt="${image.alt}" style="width: 100%; height: 100%;"></li>`
+  return `<li class="gallery-item"><img class="gallery-img" src=${image.url} alt="${image.alt}"style="width: 360px; height: 300px;"></li>`
 }).join("");
 gallery.insertAdjacentHTML("beforeend", markup);
 
+const galleryItems = document.querySelectorAll('.gallery-item');
+galleryItems.forEach(item => {
+  item.style.listStyleType = 'none';
+  item.style.flex = 'calc(100%/3 - 48px)';
+});
+const galleryImages = document.querySelectorAll('.gallery-img');
+galleryImages.forEach(img => {
+  img.style.width = '100%'; 
+  img.style.height = '100%'; 
+});
