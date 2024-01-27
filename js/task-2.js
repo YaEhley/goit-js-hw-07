@@ -37,7 +37,7 @@ gallery.style.alignItems = 'center';
 gallery.style.gap = '48px 24px';
 
 const markup = images.map((image) => {
-  return `<li class="gallery-item"><img class="gallery-img" src=${image.url} alt="${image.alt}"style="width: 360px; height: 300px;"></li>`
+  return `<li class="gallery-item"><img class="gallery-img" src=${image.url} alt="${image.alt}"></li>`
 }).join("");
 gallery.insertAdjacentHTML("beforeend", markup);
 
